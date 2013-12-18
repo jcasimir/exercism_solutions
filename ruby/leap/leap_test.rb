@@ -8,7 +8,6 @@ class YearTest < Minitest::Test
   end
 
   def test_non_leap_year
-    skip
     refute Year.leap?(1997)
   end
 

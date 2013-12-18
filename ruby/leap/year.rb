@@ -1,5 +1,5 @@
 class Year
   def self.leap?(input)
-    true
+    input.even?
   end
 end
