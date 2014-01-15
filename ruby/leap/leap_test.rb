@@ -16,7 +16,6 @@ class YearTest < Minitest::Test
   end
 
   def test_fourth_century
-    skip
     assert Year.leap?(2400)
   end
 end
