@@ -1,7 +1,6 @@
 class Year
   def self.leap?(input)
-    year = LeapYear.new(input)
-    year.valid? || (year.even? && !year.hundred?)
+    LeapYear.new(input).valid?
   end
 end
 
@@ -13,7 +12,7 @@ class LeapYear
   end
 
   def valid?
-    four_hundred?
+    four_hundred? || (even? && !hundred?)
   end
 
   def even?
