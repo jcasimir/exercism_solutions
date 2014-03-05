@@ -1,0 +1,12 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    minitest (4.7.5)
+    minitest-emoji (1.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  minitest (= 4.7.5)
+  minitest-emoji
