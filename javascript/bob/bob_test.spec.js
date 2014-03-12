@@ -18,27 +18,27 @@ describe("Bob", function() {
     expect(result).toEqual('Sure.');
   });
 
-  xit("talking forcefully", function() {
+  it("talking forcefully", function() {
     var result = bob.hey("Let's go make out behind the gym!");
     expect(result).toEqual('Whatever.');
   });
 
-  xit("using acronyms in regular speech", function() {
+  it("using acronyms in regular speech", function() {
     var result = bob.hey("It's OK if you don't want to go to the DMV.");
     expect(result).toEqual('Whatever.');
   });
 
-  xit("forceful questions", function() {
+  it("forceful questions", function() {
     var result = bob.hey('WHAT THE HELL WERE YOU THINKING?');
     expect(result).toEqual('Woah, chill out!');
   });
 
-  xit("shouting numbers", function() {
+  it("shouting numbers", function() {
     var result = bob.hey('1, 2, 3 GO!');
     expect(result).toEqual('Woah, chill out!');
   });
 
-  xit("only numbers", function() {
+  it("only numbers", function() {
     var result = bob.hey('1, 2, 3');
     expect(result).toEqual('Whatever.');
   });
