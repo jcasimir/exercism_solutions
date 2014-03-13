@@ -6,6 +6,8 @@ var Bob = function(){
       return "Woah, chill out!";
     } else if (/\?$/.test(message)) {
       return "Sure.";
+    } else if (/^\s*$/.test(message)) {
+      return 'Fine. Be that way!';
     } else {
       return "Whatever.";
     }
