@@ -6,7 +6,7 @@ describe("words()", function() {
     expect(words("word")).toEqual(expectedCounts);
   });
 
-  xit("counts one of each", function() {
+  it("counts one of each", function() {
     var expectedCounts = { one: 1, of: 1, each: 1 };
     expect(words("one of each")).toEqual(expectedCounts);
   });
