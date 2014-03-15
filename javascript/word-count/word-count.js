@@ -1,17 +1,33 @@
+function words_from(input){
+  return input.split(' ');
+}
+
+function sanitize(input){
+  return input.replace(/\W/g, '').toLowerCase();
+}
+
+function has_letters(input){
+  return input.match(/\w/);
+}
+
+function increment_counter(word, counter){
+  if(counter[word]){
+    counter[word] = counter[word] + 1;
+  } else {
+    counter[word] = 1;
+  }
+  return counter;
+}
+
 var words = function(input){
   'use strict';
-  var individual_words = input.split(' ');
   var output = {};
-
+  var individual_words = words_from(input);
   for(var position in individual_words){
     var word = individual_words[position];
-    word = word.replace(/\W/g, '').toLowerCase();
-    if(word.match(/\w/)){
-      if(output[word]){
-        output[word] = output[word] + 1;
-      } else {
-        output[word] = 1;
-      }
+    word = sanitize(word);
+    if(has_letters(word)){
+      output = increment_counter(word, output);
     }
   }
   return output;
