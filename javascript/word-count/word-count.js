@@ -11,11 +11,10 @@ function has_letters(input){
 }
 
 function increment_counter(word, counter){
-  if(counter[word]){
-    counter[word] = counter[word] + 1;
-  } else {
-    counter[word] = 1;
+  if(!counter[word]){
+    counter[word] = 0;
   }
+  counter[word] = counter[word] + 1;
   return counter;
 }
 
