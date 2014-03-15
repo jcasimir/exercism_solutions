@@ -21,8 +21,7 @@ function increment_counter(word, counter){
 var words = function(input){
   'use strict';
   var output = {};
-  var individual_words = words_from(input);
-  individual_words.map( function(word){
+  words_from(input).map( function(word){
     word = sanitize(word);
     if(has_letters(word)){
       output = increment_counter(word, output);
