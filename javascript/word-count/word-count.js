@@ -23,13 +23,12 @@ var words = function(input){
   'use strict';
   var output = {};
   var individual_words = words_from(input);
-  for(var position in individual_words){
-    var word = individual_words[position];
+  individual_words.map( function(word){
     word = sanitize(word);
     if(has_letters(word)){
       output = increment_counter(word, output);
     }
-  }
+  });
   return output;
 };
 module.exports = words;
