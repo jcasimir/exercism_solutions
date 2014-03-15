@@ -14,7 +14,7 @@ function increment_counter(word, counter){
   if(!counter[word]){
     counter[word] = 0;
   }
-  counter[word] = counter[word] + 1;
+  counter[word]++;
   return counter;
 }
 
