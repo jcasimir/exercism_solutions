@@ -31,7 +31,7 @@ describe("words()", function() {
     expect(words("go Go GO")).toEqual(expectedCounts);
   });
 
-  xit("counts constructor", function() {
+  it("counts constructor", function() {
     var expectedCounts = { constructor: 2 };
     expect(words("constructor Constructor")).toEqual(expectedCounts);
   });

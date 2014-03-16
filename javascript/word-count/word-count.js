@@ -20,7 +20,7 @@ function incrementCounter(word, counter){
 
 var words = function(input){
   'use strict';
-  var output = {};
+  var output = { constructor : 0};
   wordsFrom(input).map( function(word){
     word = sanitize(word);
     if(hasLetters(word)){
