@@ -15,7 +15,7 @@ var Anagram = function(word){
     return sortedLetters(first) === sortedLetters(second)
   }
 
-  sortedLetters = function(input){
+  function sortedLetters(input){
     return input.toLowerCase().split('').sort().join();
   }
 };
