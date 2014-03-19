@@ -12,11 +12,11 @@ class LeapYear
   end
 
   def valid?
-    four_hundred? || (even? && !hundred?)
+    four_hundred? || (four? && !hundred?)
   end
 
-  def even?
-    year.even?
+  def four?
+    year % 4 == 0
   end
 
   def hundred?
