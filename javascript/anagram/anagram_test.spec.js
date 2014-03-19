@@ -44,13 +44,13 @@ describe('Anagram', function() {
     expect(matches).toEqual(['gallery', 'regally', 'largely']);
   });
 
-  xit("detects anagrams case-insensitively",function() {
+  it("detects anagrams case-insensitively",function() {
     var detector = new Anagram("Orchestra");
     var matches = detector.match(['cashregister', 'Carthorse', 'radishes']);
     expect(matches).toEqual(['Carthorse']);
   });
 
-  xit("does not detect a word as its own anagram",function() {
+  it("does not detect a word as its own anagram",function() {
     var detector = new Anagram("banana");
     var matches = detector.match(['Banana']);
     expect(matches).toEqual([]);

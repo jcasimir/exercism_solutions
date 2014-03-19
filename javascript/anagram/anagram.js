@@ -2,18 +2,21 @@ var Anagram = function(word){
   this.word = word;
 
   this.match = function(possiblities){
-    var results = possiblities.filter(function (possibility){
-      // console.log("Looking at " + possibility);
-      // console.log("  - " + sortedLetters(possibility));
-      // console.log("  - " + sortedLetters(word));
-      // console.log("  = " + sortedLetters(possibility) === sortedLetters(word));
-      return sortedLetters(possibility) === sortedLetters(word);
+    return possiblities.filter(function (possibility){
+      return notIdentical(possibility, word) && sameLetters(possibility, word);
     });
-    return results;
   };
 
+  function notIdentical(first, second){
+    return first.toLowerCase() != second.toLowerCase()
+  }
+
+  function sameLetters(first, second){
+    return sortedLetters(first) === sortedLetters(second)
+  }
+
   sortedLetters = function(input){
-    return input.split('').sort().join().toLowerCase();
+    return input.toLowerCase().split('').sort().join();
   }
 };
 
