@@ -7,12 +7,12 @@ describe('Beer', function() {
     expect(Beer.verse(8)).toEqual(expected);
   });
 
-  xit('handles 1 bottle', function() {
+  it('handles 1 bottle', function() {
     var expected = "1 bottle of beer on the wall, 1 bottle of beer.\nTake it down and pass it around, no more bottles of beer on the wall.\n";
     expect(Beer.verse(1)).toEqual(expected);
   });
 
-  xit('handles 0 bottles', function() {
+  it('handles 0 bottles', function() {
     var expected = "No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.\n";
     expect(Beer.verse(0)).toEqual(expected);
   });
