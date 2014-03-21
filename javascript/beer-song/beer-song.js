@@ -10,15 +10,15 @@ var BeerSong = {
   },
   sing : function(verses_start, verses_stop){
     var result = "";
-    if(verses_stop){
-      for(var v = verses_start; v > verses_stop; v--){
-        result = result + this.verse(v) + '\n';
-      }
-      return result + this.verse(v)      
-    } else {
-      return "3 bottles of beer on the wall, 3 bottles of beer.\nTake one down and pass it around, 2 bottles of beer on the wall.\n\n2 bottles of beer on the wall, 2 bottles of beer.\nTake one down and pass it around, 1 bottle of beer on the wall.\n\n1 bottle of beer on the wall, 1 bottle of beer.\nTake it down and pass it around, no more bottles of beer on the wall.\n\nNo more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.\n"  
-    }    
-  }
+    verses_stop = verses_stop || 0
+    for(var v = verses_start; v > verses_stop; v--){
+      result = result + this.verse(v) + '\n';
+    }
+    result = result + this.verse(v);
+    //console.log(result);
+    //console.log("3 bottles of beer on the wall, 3 bottles of beer.\nTake one down and pass it around, 2 bottles of beer on the wall.\n\n2 bottles of beer on the wall, 2 bottles of beer.\nTake one down and pass it around, 1 bottle of beer on the wall.\n\n1 bottle of beer on the wall, 1 bottle of beer.\nTake it down and pass it around, no more bottles of beer on the wall.\n\nNo more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.\n");
+    return result;
+  }  
 };
 
 module.exports = BeerSong;
