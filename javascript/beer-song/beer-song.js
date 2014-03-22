@@ -1,9 +1,13 @@
 var BeerSong = {
   verse : function(count){
     if(count == 0){
-      return "No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.\n"
+      return "No more bottles of beer on the wall, no more bottles of beer.\n" + 
+             "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
     } else {
-      return this.bottles(count) + " of beer on the wall, " + this.bottles(count) + " of beer.\nTake " + this.next_bottle(count) + " down and pass it around, " + this.bottles(count - 1) + " of beer on the wall.\n";  
+      return this.bottles(count) + " of beer on the wall, " + 
+             this.bottles(count) + " of beer.\n" +
+             "Take " + this.next_bottle(count) + " down and pass it around, " + 
+             this.bottles(count - 1) + " of beer on the wall.\n";  
     }    
   },
   sing : function(verses_start, verses_stop){
