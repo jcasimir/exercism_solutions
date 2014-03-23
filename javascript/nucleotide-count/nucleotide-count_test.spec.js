@@ -8,12 +8,12 @@ describe('DNA', function() {
     expect(dna.nucleotideCounts).toEqual(expected);
   });
 
-  xit('has no adenosine', function(){
+  it('has no adenosine', function(){
     var dna = new DNA('');
     expect(dna.count('A')).toEqual(0);
   });
 
-  xit('repetitive cytidine gets counts', function(){
+  it('repetitive cytidine gets counts', function(){
     var dna = new DNA('CCCCC');
     expect(dna.count('C')).toEqual(5);
   });
