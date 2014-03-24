@@ -24,18 +24,18 @@ describe('DNA', function() {
     expect(dna.nucleotideCounts).toEqual(expected);
   });
 
-  xit('counts only thymidine', function(){
+  it('counts only thymidine', function(){
     var dna = new DNA('GGGGTAACCCGG');
     expect(dna.count('T')).toEqual(1);
   });
 
-  xit('counts a nucleotide only once', function(){
+  it('counts a nucleotide only once', function(){
     var dna = new DNA('GGTTGG');
     dna.count('T');
     expect(dna.count('T')).toEqual(2);
   });
 
-  xit('has no uracil', function(){
+  it('has no uracil', function(){
     var dna = new DNA('GGTTGG');
     expect(dna.count('U')).toEqual(0);
   });
