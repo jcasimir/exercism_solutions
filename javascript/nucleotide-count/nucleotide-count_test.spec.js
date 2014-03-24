@@ -18,7 +18,7 @@ describe('DNA', function() {
     expect(dna.count('C')).toEqual(5);
   });
 
-  xit('repetitive sequence has only guanosine', function(){
+  it('repetitive sequence has only guanosine', function(){
     var dna = new DNA('GGGGGGGG'),
         expected = { A : 0, T : 0, C : 0, G : 8 };
     expect(dna.nucleotideCounts).toEqual(expected);
@@ -47,7 +47,7 @@ describe('DNA', function() {
     }).toThrow(new Error("Invalid Nucleotide"));
   });
 
-  xit('counts all nucleotides', function(){
+  it('counts all nucleotides', function(){
     var dna = new DNA("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"),
         expected = { A : 20, T : 21, G : 17, C : 12 };
     expect(dna.nucleotideCounts).toEqual(expected);

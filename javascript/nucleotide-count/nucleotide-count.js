@@ -1,16 +1,17 @@
 var DNA = function(sequence){
+  this.sequence = sequence;
 
-  return {
-    nucleotideCounts : { 
-      'A' : 0, 
-      'T' : 0, 
-      'C' : 0, 
-      'G' : 0 
-    },
-    count : function(marker){ 
-      return sequence.split(marker).length - 1;
-    }
+  this.count = function(marker){ 
+    return sequence.split(marker).length - 1;
   };
+
+  this.nucleotideCounts = { 
+      'A' : this.count('A'),
+      'T' : this.count('T'), 
+      'C' : this.count('C'), 
+      'G' : this.count('G')
+  };
+  
 };
 
 module.exports = DNA;
