@@ -1,5 +1,6 @@
 var DNA = function(sequence){
   this.sequence = sequence;
+  this.acceptedMarkers = ['A', 'T', 'C', 'G', 'U'];
 
   this.count = function(marker){
     this.checkMarker(marker);
@@ -7,7 +8,7 @@ var DNA = function(sequence){
   };
 
   this.checkMarker = function(marker){
-    if(['A', 'T', 'C', 'G', 'U'].indexOf(marker) == -1){
+    if(this.acceptedMarkers.indexOf(marker) == -1){
       throw(new Error("Invalid Nucleotide"));
     };    
   }
@@ -18,7 +19,6 @@ var DNA = function(sequence){
       'C' : this.count('C'), 
       'G' : this.count('G')
   };
-  
 };
 
 module.exports = DNA;
