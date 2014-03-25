@@ -1,6 +1,7 @@
 var DNA = function(sequence){
   this.sequence = sequence;
-  this.acceptedMarkers = ['A', 'T', 'C', 'G', 'U'];
+  this.displayedMarkers = ['A', 'T', 'C', 'G'];
+  this.acceptedMarkers = this.displayedMarkers + ['U'];
 
   this.count = function(marker){
     this.checkMarker(marker);
