@@ -14,12 +14,11 @@ var DNA = function(sequence){
     };    
   }
 
-  this.nucleotideCounts = { 
-      'A' : this.count('A'),
-      'T' : this.count('T'), 
-      'C' : this.count('C'), 
-      'G' : this.count('G')
-  };
+  this.nucleotideCounts = {};
+  for(var i = 0; i < this.displayedMarkers.length; i++){
+    var marker = this.displayedMarkers[i];
+    this.nucleotideCounts[marker] = this.count(marker);
+  }
 };
 
 module.exports = DNA;
