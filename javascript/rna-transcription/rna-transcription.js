@@ -1,17 +1,17 @@
 var toRna = function (input){
+  var mapping = { "C" : "G",
+                  "G" : "C",
+                  "A" : "U",
+                  "T" : "A" };
+
   function complementFor(dna){
-    if(dna == "C"){
-      return "G";
-    } else if(dna == "G"){
-      return "C";
-    } else if(dna == "A"){
-      return "U";
-    } else if(dna == "T"){
-      return "A";
-    }
+    return mapping[dna];
   };
 
-  return complementFor(input);
+  var nucleotides = input.split('');
+  return nucleotides.map(function(element){
+    return complementFor(element);
+  }).join('');
 };
 
 module.exports = toRna;
