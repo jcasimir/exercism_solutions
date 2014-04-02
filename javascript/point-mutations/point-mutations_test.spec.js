@@ -37,7 +37,7 @@ describe("DNA", function() {
     expect(dna.hammingDistance('AGGCTAGCGGTAGGAC')).toEqual(3);
   });
 
-  xit("shortens original strand when longer", function() {
+  it("shortens original strand when longer", function() {
     var dna = new DNA('GACTACGGACAGGGTAGGGAAT');
     expect(dna.hammingDistance('GACATCGCACACC')).toEqual(5);
   });

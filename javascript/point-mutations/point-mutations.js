@@ -5,7 +5,8 @@ var DNA = function(sequence){
       var sequence_elements = sequence.split('');
       var comparator_elements = comparator.split('');
       for(var i = 0; i < sequence_elements.length; i++){
-        if(sequence_elements[i] != comparator_elements[i]){
+        if(comparator_elements[i] && 
+          (sequence_elements[i] != comparator_elements[i])){
           count++;
         }
       }
