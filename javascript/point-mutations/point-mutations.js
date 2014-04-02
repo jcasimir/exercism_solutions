@@ -1,16 +1,17 @@
 var DNA = function(sequence){
   return {
     hammingDistance : function(comparator){
-      count = 0;
+      var distance = 0;
       var sequence_elements = sequence.split('');
       var comparator_elements = comparator.split('');
-      for(var i = 0; i < sequence_elements.length; i++){
-        if(comparator_elements[i] && 
-          (sequence_elements[i] != comparator_elements[i])){
-          count++;
+
+      sequence_elements.slice(0, comparator_elements.length).forEach(function(element, index){
+        if(element != comparator_elements[index]){
+          distance++;
         }
-      }
-      return count;
+      });
+
+      return distance;
     }
   }
 };
