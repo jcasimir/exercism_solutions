@@ -1,12 +1,16 @@
-var DNA = function(sequence){
+var DNA = function(base){
   return {
+    examinationSequence : function(base, comparator){
+      return base.slice(0, comparator.length);
+    },
+    
     hammingDistance : function(comparator){
       var distance = 0;
-      var sequence_elements = sequence.split('');
-      var comparator_elements = comparator.split('');
+      var baseElements = base.split('');
+      var comparatorElements = comparator.split('');
 
-      sequence_elements.slice(0, comparator_elements.length).forEach(function(element, index){
-        if(element != comparator_elements[index]){
+      this.examinationSequence(baseElements, comparatorElements).forEach(function(element, index){
+        if(element != comparatorElements[index]){
           distance++;
         }
       });
