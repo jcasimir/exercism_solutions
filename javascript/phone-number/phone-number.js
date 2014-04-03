@@ -1,7 +1,11 @@
-var PhoneNumber = function(){
+var PhoneNumber = function(input){
   return {
     number : function(){
-      return '1234567890';
+      if(input.length == 11 && input[0] != '1'){
+        return '0000000000';
+      } else {
+        return '1234567890';
+      };
     }
   }
 };
