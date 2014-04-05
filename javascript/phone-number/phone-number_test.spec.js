@@ -26,12 +26,12 @@ describe("PhoneNumber()", function() {
     expect(phone.number()).toEqual("0000000000");
   });
 
-  xit("has an area code", function() {
+  it("has an area code", function() {
     var phone = new PhoneNumber("1234567890");
     expect(phone.areaCode()).toEqual("123");
   });
 
-  xit("formats a number", function() {
+  it("formats a number", function() {
     var phone = new PhoneNumber("1234567890");
     expect(phone.toString()).toEqual("(123) 456-7890");
   });
