@@ -1,14 +1,17 @@
 var PhoneNumber = function(input){
   return {
-    digits : function(){
-      return input.replace(/\D/gi, '');
+    digits : function(unclean){
+      return unclean.replace(/\D/gi, '');
+    },
+    trim : function(data){
+      if(data.length == 11 && data[0] == '1'){
+        data = data.slice(1, data.length);
+      }
+      return data;
     },
     number : function(){
-      var digits = this.digits();
-      
-      if(digits.length == 11 && digits[0] == '1'){
-        digits = digits.slice(1, digits.length);
-      }
+      var digits = this.digits(input);
+      digits = this.trim(digits);
 
       if(digits.length != 10){
         return '0000000000';
