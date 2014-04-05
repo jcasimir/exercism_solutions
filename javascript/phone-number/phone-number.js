@@ -1,7 +1,7 @@
 var PhoneNumber = function(input){
   return {
-    digits : function(unclean){
-      return unclean.replace(/\D/gi, '');
+    digits : function(data){
+      return data.replace(/\D/gi, '');
     },
     trim : function(data){
       if(data.length == 11 && data[0] == '1'){
@@ -9,15 +9,14 @@ var PhoneNumber = function(input){
       }
       return data;
     },
-    number : function(){
-      var digits = this.digits(input);
-      digits = this.trim(digits);
-
-      if(digits.length != 10){
-        return '0000000000';
-      } else {
-        return digits;
+    checkLength : function(data){
+      if(data.length != 10){
+        data = '0000000000';
       };
+      return data;
+    },
+    number : function(){
+      return this.checkLength(this.trim(this.digits(input)));
     },
     areaCode : function(){
       return this.number().slice(0,3);
