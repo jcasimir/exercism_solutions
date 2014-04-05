@@ -1,16 +1,19 @@
 var PhoneNumber = function(input){
   return {
+    digits : function(){
+      return input.replace(/\D/gi, '');
+    },
     number : function(){
-      input = input.replace(/\D/gi, '');
+      var digits = this.digits();
       
-      if(input.length == 11 && input[0] == '1'){
-        input = input.slice(1, input.length);
+      if(digits.length == 11 && digits[0] == '1'){
+        digits = digits.slice(1, digits.length);
       }
 
-      if(input.length != 10){
+      if(digits.length != 10){
         return '0000000000';
       } else {
-        return input;
+        return digits;
       };
     },
     areaCode : function(){
