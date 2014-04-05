@@ -3,7 +3,7 @@ var PhoneNumber = function(input){
     digits : function(data){
       return data.replace(/\D/gi, '');
     },
-    trim : function(data){
+    trimCountryCode : function(data){
       if(data.length == 11 && data[0] == '1'){
         data = data.slice(1, data.length);
       }
@@ -16,7 +16,7 @@ var PhoneNumber = function(input){
       return data;
     },
     number : function(){
-      return this.checkLength(this.trim(this.digits(input)));
+      return this.checkLength(this.trimCountryCode(this.digits(input)));
     },
     areaCode : function(){
       return this.number().slice(0,3);
