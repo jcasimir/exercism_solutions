@@ -5,7 +5,8 @@ function School(){
     return storedNames;
   };
   this.add = function(name, grade){
-    storedNames[grade] = [name];
+    storedNames[grade] = storedNames[grade] || [];
+    storedNames[grade].push(name);
   }
 };
 
