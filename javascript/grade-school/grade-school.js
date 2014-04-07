@@ -1,8 +1,11 @@
-var School = function(){
-  return {
-    roster : function(){
-      return {};
-    }
+function School(){
+  var storedNames = {};
+
+  this.roster = function(){
+    return storedNames;
+  };
+  this.add = function(name, grade){
+    storedNames[grade] = [name];
   }
 };
 

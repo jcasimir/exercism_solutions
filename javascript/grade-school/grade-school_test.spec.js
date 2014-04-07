@@ -11,7 +11,7 @@ describe("School", function() {
     expect(school.roster()).toEqual({});
   });
 
-  xit("adding a student adds them to the roster for the given grade", function() {
+  it("adding a student adds them to the roster for the given grade", function() {
     school.add("Aimee", 2);
     var expectedDb = { 2 : [ "Aimee" ] };
     expect(school.roster()).toEqual(expectedDb);
