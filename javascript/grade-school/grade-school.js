@@ -1,6 +1,6 @@
 function School(){
   var storedNames = {};
-  this.fetch = function(level){
+  this.grade = function(level){
     storedNames[level] = storedNames[level] || [];
     return storedNames[level];
   }
@@ -8,11 +8,11 @@ function School(){
   this.roster = function(){
     return storedNames;
   };
+
   this.add = function(name, level){
-    this.fetch(level).push(name);
-  };
-  this.grade = function(level){
-    return this.fetch(level).sort();
+    var pre = this.grade(level)
+    pre.push(name);
+    pre.sort();
   };
 };
 
