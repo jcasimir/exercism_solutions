@@ -1,5 +1,6 @@
 function School(){
   var storedNames = {};
+  
   this.grade = function(level){
     storedNames[level] = storedNames[level] || [];
     return storedNames[level];
