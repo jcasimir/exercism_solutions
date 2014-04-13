@@ -17,7 +17,7 @@ describe("Robot", function() {
     expect(robotOne.name).not.toEqual(robotTwo.name);
   });
 
-  xit("is able to reset the name", function() {
+  it("is able to reset the name", function() {
     var robot = new Robot();
     var originalName = robot.name;
     robot.reset();
