@@ -1,9 +1,9 @@
 function Robot(){
-  this.name = this.name || "AB" + Math.random(5);
+  this.generateName = function(){ return "AB" + Math.random(5) };
 
-  this.reset = function(){
-    this.name = undefined;    
-  };
+  this.name = this.name || this.generateName();
+  
+  this.reset = function(){ this.name = undefined; };
 };
 
 module.exports = Robot;
