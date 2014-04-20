@@ -11,6 +11,10 @@ class YearTest < Minitest::Test
     refute Year.leap?(1997)
   end
 
+  def test_non_leap_even_year
+    refute Year.leap?(1998)
+  end
+
   def test_century
     refute Year.leap?(1900)
   end
