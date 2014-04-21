@@ -4,7 +4,7 @@ function etl(inputs){
     inputs[key].map(function(value){
       value = value.toLowerCase();
       results[value] = results[value] || 0;
-      results[value] += 1;
+      results[value] += parseInt(key);
     });
   }
   return results;
