@@ -1,6 +1,7 @@
 function SpaceAge(seconds){
   this.seconds = seconds;
   this.earthYear = 31557600.0;
+  
   this.onEarthPrecise = function(){
     return this.seconds / this.earthYear;
   };
