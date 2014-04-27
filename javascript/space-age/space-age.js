@@ -42,16 +42,7 @@ function SpaceAge(seconds){
   };
 
   this.round = function(number){
-    var precision = 1000.0;
-    var multiUp = parseInt(number * precision);
-    var ones = multiUp % 10
-    var rounded;
-    if(ones >= 5){
-      rounded = multiUp + (10 - ones);
-    } else {
-      rounded = multiUp - ones;
-    }
-    return rounded / precision;
+    return parseFloat(number.toFixed(2));
   }
 };
 
