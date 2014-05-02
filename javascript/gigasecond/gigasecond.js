@@ -1,6 +1,8 @@
-function Gigasecond(){
+function Gigasecond(birthDate){
+  this.birthMillisecond = birthDate.getTime();
+  this.gigaDate = new Date(this.birthMillisecond + Math.pow(10,12) - 2800000);
   this.date = function(){
-    return new Date(2043, 0, 1);
+    return this.gigaDate;
   };
 };
 
