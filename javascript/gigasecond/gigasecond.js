@@ -1,8 +1,10 @@
 function Gigasecond(birthDate){
   this.birthMillisecond = birthDate.getTime();
-  this.gigaDate = new Date(this.birthMillisecond + Math.pow(10,12) - 2800000);
+  this.one = Math.pow(10,12);
+  this.error = -2800000;
+
   this.date = function(){
-    return this.gigaDate;
+    return new Date(this.birthMillisecond + this.one + this.error);
   };
 };
 
