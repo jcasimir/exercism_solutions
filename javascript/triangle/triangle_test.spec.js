@@ -7,12 +7,12 @@ describe("Triangle", function() {
     expect(triangle.kind()).toEqual("equilateral");
   });
 
-  xit("larger equilateral triangles also have equal sides", function() {
+  it("larger equilateral triangles also have equal sides", function() {
     var triangle = new Triangle(10,10,10);
     expect(triangle.kind()).toEqual("equilateral");
   });
 
-  xit("isosceles triangles have last two sides equal", function() {
+  it("isosceles triangles have last two sides equal", function() {
     var triangle = new Triangle(3,4,4);
     expect(triangle.kind()).toEqual("isosceles");
   });
