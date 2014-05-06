@@ -17,22 +17,22 @@ describe("Triangle", function() {
     expect(triangle.kind()).toEqual("isosceles");
   });
 
-  xit("isosceles trianges have first and last sides equal", function() {
+  it("isosceles trianges have first and last sides equal", function() {
     var triangle = new Triangle(4,3,4);
     expect(triangle.kind()).toEqual("isosceles");
   });
 
-  xit("isosceles triangles have two first sides equal", function() {
+  it("isosceles triangles have two first sides equal", function() {
     var triangle = new Triangle(4,4,3);
     expect(triangle.kind()).toEqual("isosceles");
   });
 
-  xit("isosceles triangles have in fact exactly two sides equal", function() {
+  it("isosceles triangles have in fact exactly two sides equal", function() {
     var triangle = new Triangle(10,10,2);
     expect(triangle.kind()).toEqual("isosceles");
   });
 
-  xit("scalene triangles have no equal sides", function() {
+  it("scalene triangles have no equal sides", function() {
     var triangle = new Triangle(3,4,5);
     expect(triangle.kind()).toEqual("scalene");
   });
