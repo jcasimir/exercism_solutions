@@ -57,7 +57,7 @@ describe("Triangle", function() {
     expect(triangle.kind).toThrow();
   });
 
-  xit("triangles with negative sides are illegal", function() {
+  it("triangles with negative sides are illegal", function() {
     var triangle = new Triangle(3,4,-5);
     expect(triangle.kind()).toEqual("illegal");
   });
