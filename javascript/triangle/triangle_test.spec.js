@@ -67,12 +67,12 @@ describe("Triangle", function() {
     expect(triangle.kind()).toEqual("illegal");
   });
 
-  xit("triangles violating triangle inequality are illegal 2", function() {
+  it("triangles violating triangle inequality are illegal 2", function() {
     var triangle = new Triangle(2,4,2);
     expect(triangle.kind()).toEqual("illegal");
   });
 
-  xit("triangles violating triangle inequality are illegal 3", function() {
+  it("triangles violating triangle inequality are illegal 3", function() {
     var triangle = new Triangle(7,3,2);
     expect(triangle.kind()).toEqual("illegal");
   });

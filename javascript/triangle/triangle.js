@@ -14,7 +14,7 @@ function Triangle(side1, side2, side3){
   };
 
   this.violatesTriangleEquality = function(){
-    return ((side1 + side2 < side3) || (side2 + side3 < side1) || (side1 + side3 < side2));
+    return ((side1 + side2 <= side3) || (side2 + side3 <= side1) || (side1 + side3 <= side2));
   }
 
   this.isEquilateral = function(){
