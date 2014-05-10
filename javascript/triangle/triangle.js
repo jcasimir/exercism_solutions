@@ -18,21 +18,15 @@ function Triangle(side1, side2, side3){
   }
 
   this.isIllegal = function(){
-    if(this.hasNegativeSide() || this.violatesTriangleEquality()){
-      return 'illegal'
-    };
+    return (this.hasNegativeSide() || this.violatesTriangleEquality()) && 'illegal';
   }
 
   this.isEquilateral = function(){
-    if(this.side1 === this.side2 && this.side2 === this.side3){
-      return 'equilateral';
-    };
+    return (this.side1 === this.side2 && this.side2 === this.side3) && 'equilateral';
   }
 
   this.isIsosceles = function(){
-    if(this.side1 === this.side2 || this.side2 === this.side3 || this.side1 == this.side3){
-      return 'isosceles';
-    };
+    return (this.side1 === this.side2 || this.side2 === this.side3 || this.side1 == this.side3) && 'isosceles';
   }
 
   this.kind = function(){
