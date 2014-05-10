@@ -1,34 +1,41 @@
 function Triangle(side1, side2, side3){
-  this.hasSides = function(){
-    if(side1 + side2 + side3 == 0){
-      throw "Invalid triangle dimensions";
-    };
+  this.side1 = side1;
+  this.side2 = side2;
+  this.side3 = side3;
+}
+
+Triangle.prototype.hasSides = function(){
+  if(this.side1 + this.side2 + this.side3 == 0){
+    throw "Invalid triangle dimensions";
   };
+};
 
-  this.hasNegativeSide = function(){
-    return (side1 <= 0 || side2 <= 0 || side3 <= 0);
-  };
+Triangle.prototype.hasNegativeSide = function(){
+  return (this.side1 <= 0 || this.side2 <= 0 || this.side3 <= 0);
+};
 
-  this.violatesTriangleEquality = function(){
-    return ((side1 + side2 <= side3) || (side2 + side3 <= side1) || (side1 + side3 <= side2));
-  }
+Triangle.prototype.violatesTriangleEquality = function(){
+  var side1 = this.side1, side2 = this.side2, side3 = this.side3;
+  return ((side1 + side2 <= side3) || (side2 + side3 <= side1) || (side1 + side3 <= side2));
+}
 
-  this.isIllegal = function(){
-    return (this.hasNegativeSide() || this.violatesTriangleEquality()) && 'illegal';
-  }
+Triangle.prototype.isIllegal = function(){
+  return (this.hasNegativeSide() || this.violatesTriangleEquality()) && 'illegal';
+}
 
-  this.isEquilateral = function(){
-    return (side1 === side2 && side2 === side3) && 'equilateral';
-  }
+Triangle.prototype.isEquilateral = function(){
+  var side1 = this.side1, side2 = this.side2, side3 = this.side3;
+  return (this.side1 === this.side2 && this.side2 === this.side3) && 'equilateral';
+}
 
-  this.isIsosceles = function(){
-    return (side1 === side2 || side2 === side3 || side1 == side3) && 'isosceles';
-  }
+Triangle.prototype.isIsosceles = function(){
+  var side1 = this.side1, side2 = this.side2, side3 = this.side3;
+  return (side1 === side2 || side2 === side3 || side1 == side3) && 'isosceles';
+}
 
-  this.kind = function(){
-    this.hasSides();    
-    return this.isIllegal() || this.isEquilateral() || this.isIsosceles() || 'scalene';
-  };
+Triangle.prototype.kind = function(){
+  this.hasSides();    
+  return this.isIllegal() || this.isEquilateral() || this.isIsosceles() || 'scalene';
 };
 
 module.exports = Triangle;
