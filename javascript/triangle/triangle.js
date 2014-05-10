@@ -1,6 +1,6 @@
 function Triangle(side1, side2, side3){
   this.hasSides = function(){
-    if(side1 + side2 + side3 == 0){
+    if(!side1 || !side2 || !side3 || (side1 + side2 + side3 == 0)) {
       throw "Invalid triangle dimensions";
     };
   };
@@ -14,20 +14,29 @@ function Triangle(side1, side2, side3){
   }
 
   this.isIllegal = function(){
-    return (this.hasNegativeSide() || this.violatesTriangleEquality()) && 'illegal';
+    return this.hasNegativeSide() || this.violatesTriangleEquality();
   }
 
   this.isEquilateral = function(){
-    return (side1 === side2 && side2 === side3) && 'equilateral';
+    return side1 === side2 && side2 === side3;
   }
 
   this.isIsosceles = function(){
-    return (side1 === side2 || side2 === side3 || side1 == side3) && 'isosceles';
+    return side1 === side2 || side2 === side3 || side1 === side3;
   }
 
   this.kind = function(){
-    this.hasSides();    
-    return this.isIllegal() || this.isEquilateral() || this.isIsosceles() || 'scalene';
+    this.hasSides();
+    
+    if this.isIllegal() {
+      return 'illegal';
+    } else if this.isEquilateral() {
+      return 'equilateral';
+    } else if this.isIsosceles() {
+      return 'isosceles';
+    } else {
+      return 'scalene';
+    }
   };
 };
 
