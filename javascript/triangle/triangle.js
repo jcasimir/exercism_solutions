@@ -17,30 +17,27 @@ function Triangle(side1, side2, side3){
     return ((side1 + side2 <= side3) || (side2 + side3 <= side1) || (side1 + side3 <= side2));
   }
 
-  this.isEquilateral = function(){
-    return (this.side1 === this.side2 && this.side2 === this.side3);
-  }
-
-  this.isIsoceles = function(){
-    return (this.side1 === this.side2 || this.side2 === this.side3 || this.side1 == this.side3);
-  }
-
   this.isIllegal = function(){
-    return (this.hasNegativeSide() || this.violatesTriangleEquality());
+    if(this.hasNegativeSide() || this.violatesTriangleEquality()){
+      return 'illegal'
+    };
+  }
+
+  this.isEquilateral = function(){
+    if(this.side1 === this.side2 && this.side2 === this.side3){
+      return 'equilateral';
+    };
+  }
+
+  this.isIsosceles = function(){
+    if(this.side1 === this.side2 || this.side2 === this.side3 || this.side1 == this.side3){
+      return 'isosceles';
+    };
   }
 
   this.kind = function(){
     this.hasSides();    
-
-    if(this.isIllegal()){
-      return 'illegal';
-    } else if(this.isEquilateral()){
-      return 'equilateral';
-    } else if(this.isIsoceles()) {
-      return 'isosceles';
-    } else {
-      return 'scalene';
-    };
+    return this.isIllegal() || this.isEquilateral() || this.isIsosceles() || 'scalene';
   };
 };
 
