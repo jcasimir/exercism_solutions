@@ -1,6 +1,6 @@
 function Triangle(side1, side2, side3){
   this.hasSides = function(){
-    if(!(side1 + side2 + side3 > 0)){
+    if(side1 + side2 + side3 == 0){
       throw "Invalid triangle dimensions";
     };
   };
