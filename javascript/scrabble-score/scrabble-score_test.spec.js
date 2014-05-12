@@ -5,15 +5,15 @@ describe('Scrabble', function() {
     expect(score("")).toEqual(0);
   });
 
-  xit("scores a null as zero",function() {
+  it("scores a null as zero",function() {
     expect(score(null)).toEqual(0);
   });
 
-  xit("scores a very short word",function() {
+  it("scores a very short word",function() {
     expect(score("a")).toEqual(1);
   });
 
-  xit("scores the word by the number of letters",function() {
+  it("scores the word by the number of letters",function() {
     expect(score("street")).toEqual(6);
   });
 
