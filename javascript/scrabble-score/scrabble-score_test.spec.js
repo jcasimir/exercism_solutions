@@ -17,7 +17,7 @@ describe('Scrabble', function() {
     expect(score("street")).toEqual(6);
   });
 
-  xit("scores more complicated words with more",function() {
+  it("scores more complicated words with more",function() {
     expect(score("quirky")).toEqual(22);
   });
 
