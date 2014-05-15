@@ -19,13 +19,18 @@ function Scrabble(word){
     }
   }
 
-  word = sanitizeInput(word);
+  function letters(){
+    return sanitizeInput(word).split('');
+  }
 
-  scores = word.split('').map( scoreLetter );
+  function scoreWord(){
+    return letters().reduce(
+      function(previous, current){ return previous + scoreLetter(current) },
+      0
+    );
+  };
 
-  var total = 0;
-  scores.map(function(score){ total += score });
-  return total;
+  return scoreWord();
 };
 
 module.exports = Scrabble;

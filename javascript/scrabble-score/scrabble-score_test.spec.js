@@ -21,7 +21,7 @@ describe('Scrabble', function() {
     expect(score("quirky")).toEqual(22);
   });
 
-  xit("scores case insensitive words",function() {
+  it("scores case insensitive words",function() {
     expect(score("MULTIBILLIONAIRE")).toEqual(20);
   });
 });
