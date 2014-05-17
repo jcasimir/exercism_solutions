@@ -5,11 +5,11 @@ describe("toRoman()", function() {
     expect(toRoman(1)).toEqual('I');
   });
 
-  xit("converts 2", function() {
+  it("converts 2", function() {
     expect(toRoman(2)).toEqual('II');
   });
 
-  xit("converts 3", function() {
+  it("converts 3", function() {
     expect(toRoman(3)).toEqual('III');
   });
 
